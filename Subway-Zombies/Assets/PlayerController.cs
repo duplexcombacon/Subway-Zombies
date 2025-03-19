@@ -1,28 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class MovimentoJogador : MonoBehaviour
 {
-    public float speed = 5f;  // Velocidade do jogador
-    private float moveInput;  // Entrada de movimento
-    public int lane = 1;  // Definir lane inicial (0, 1, 2, 3)
+    public float velocidadeMovimento = 5f; // Velocidade do movimento
+    private Vector2 direcaoMovimento;
 
-    private void Update()
+    void Update()
     {
-        // Movimentação para os lados (para esquerda e direita)
-        moveInput = Input.GetAxisRaw("Horizontal");  // Detecta as teclas de movimento (A/D ou setas)
+        // Captura a entrada do teclado (Makey Makey usa setas do teclado)
+        float movimentoX = 0;
+        if (Input.GetKey(KeyCode.LeftArrow)) movimentoX = -1;
+        if (Input.GetKey(KeyCode.RightArrow)) movimentoX = 1;
 
-        // Movimentar jogador entre as pistas
-        if (moveInput != 0)
-        {
-            int targetLane = lane + (int)moveInput;  // Atualiza a lane
-            if (targetLane >= 0 && targetLane <= 3)  // Verifica se a lane está dentro do intervalo
-            {
-                lane = targetLane;
-                Vector3 targetPosition = new Vector3(lane * 2f, transform.position.y, transform.position.z); // A posição final na lane
-                transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-            }
-        }
+        direcaoMovimento = new Vector2(movimentoX, 0).normalized;
+    }
+
+    void FixedUpdate()
+    {
+        // Aplica o movimento na horizontal
+        transform.Translate(direcaoMovimento * velocidadeMovimento * Time.fixedDeltaTime);
     }
 }
