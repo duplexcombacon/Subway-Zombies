@@ -2,37 +2,26 @@ using UnityEngine;
 
 public class LoopCenario : MonoBehaviour
 {
-    public float velocidade = 3f;  // Velocidade do movimento do cenário
-    public float posX = -1.2f;     // Posição X ajustada
-    public float limiteY;  // Posição onde o bloco será reciclado
+    public float velocidade = 3f;  // Velocidade do movimento da estrada
+    public float limiteY = -15f;   // Posição onde a estrada será reciclada
     public float alturaMapa = 10f;  // Altura do bloco do cenário
-    public GameObject estrada2;  // Referência à segunda estrada
+    public float posX = -1.2f;  // Posição X ajustada para -1.2f
 
     private void Start()
     {
-        // Definir posição inicial da estrada
-        transform.position = new Vector3(posX, alturaMapa, -0.5f); // Primeira estrada
-        estrada2.transform.position = new Vector3(posX, alturaMapa - alturaMapa, -0.5f); // Segunda estrada logo abaixo da primeira
+        // Definir posição inicial da estrada 1
+        transform.position = new Vector3(posX, alturaMapa);
     }
 
     void Update()
     {
-        // Move as estradas para baixo
+        // Move a estrada 1 para baixo
         transform.position += Vector3.down * velocidade * Time.deltaTime;
-        estrada2.transform.position += Vector3.down * velocidade * Time.deltaTime;
 
-        // Quando a primeira estrada atinge o limite, reposiciona-a atrás da segunda
+        // Quando a estrada atinge o limite, reposiciona-a para cima
         if (transform.position.y <= limiteY)
         {
-            // Posiciona a estrada 1 novamente no topo (acima da estrada 2)
-            transform.position = new Vector3(posX, estrada2.transform.position.y + alturaMapa, -0.5f);
-        }
-
-        // Quando a segunda estrada atinge o limite, reposiciona-a atrás da primeira
-        if (estrada2.transform.position.y <= limiteY)
-        {
-            // Posiciona a estrada 2 novamente no topo (acima da estrada 1)
-            estrada2.transform.position = new Vector3(posX, transform.position.y + alturaMapa, -0.5f);
+            transform.position = new Vector3(posX, alturaMapa + alturaMapa, -0.5f);  // Move a estrada para cima
         }
     }
 }
