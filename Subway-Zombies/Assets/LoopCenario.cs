@@ -3,7 +3,7 @@ using UnityEngine;
 public class LoopCenario : MonoBehaviour
 {
     public float velocidade = 3f;  // Velocidade do movimento da estrada
-    public float limiteY = -15f;   // Posição onde a estrada será reciclada
+    public float limiteY = -10f;   // Posição onde a estrada será reciclada
     public float alturaMapa = 10f;  // Altura do bloco do cenário
     public float posX = -1.2f;  // Posição X ajustada para -1.2f
 
