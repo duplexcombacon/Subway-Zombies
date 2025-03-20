@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6a51eaf29ae69f54791384b0a970a64c
+guid: 451d27ae7d1370b488d9f96ce93d6d9c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1354947234117329680
-    second: Player1-1_0
+      213: -7292581976814344407
+    second: barreira_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 25
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player1-1_0
+      name: barreira_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 175
-        height: 245
+        x: 24
+        y: 81
+        width: 89
+        height: 83
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0fcd90d5ba2423de0800000000000000
-      internalID: -1354947234117329680
+      spriteID: 927a090745b8bca90800000000000000
+      internalID: -7292581976814344407
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c3c3f4c6f3631d040a11c84894e0b5a0
+    spriteID: 691e2267179229f45aaa68fb4ca15bee
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Player1-1_0: -1354947234117329680
+      barreira_0: -7292581976814344407
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
