@@ -1,27 +1,26 @@
 using UnityEngine;
 
-public class LoopCenario : MonoBehaviour
+public class InfiniteBackgroundY : MonoBehaviour
 {
-    public float velocidade = 3f;  // Velocidade do movimento da estrada
-    public float limiteY = -10f;   // Posição onde a estrada será reciclada
-    public float alturaMapa = 10f;  // Altura do bloco do cenário
-    public float posX = -1.2f;  // Posição X ajustada para -1.2f
+    public float scrollSpeed = 5f;  // Velocidade do movimento do fundo
+    private float height;
 
-    private void Start()
+    void Start()
     {
-        // Definir posição inicial da estrada 1
-        transform.position = new Vector3(posX, alturaMapa);
+        // Obtém a altura do background
+        height = GetComponent<SpriteRenderer>().bounds.size.y;
     }
 
     void Update()
     {
-        // Move a estrada 1 para baixo
-        transform.position += Vector3.down * velocidade * Time.deltaTime;
+        // Move o fundo para baixo (no eixo Y negativo)
+        transform.position += Vector3.down * scrollSpeed * Time.deltaTime;
 
-        // Quando a estrada atinge o limite, reposiciona-a para cima
-        if (transform.position.y <= limiteY)
+        // Se o fundo sair da tela (no eixo Y negativo)
+        if (transform.position.y <= -height)
         {
-            transform.position = new Vector3(posX, alturaMapa + alturaMapa, -0.5f);  // Move a estrada para cima
+            // Reposiciona o fundo para o lado oposto (cria o loop infinito)
+            transform.position = new Vector3(transform.position.x, transform.position.y + height * 2, transform.position.z);
         }
     }
 }
