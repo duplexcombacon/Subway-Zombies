@@ -5,12 +5,18 @@ public class MainMenu : MonoBehaviour
 {
     public void Jogar()
     {
-        SceneManager.LoadScene("Jogo"); // substitui pelo nome real da tua cena
+        SceneManager.LoadScene("Jogo"); // nome exato da cena
+    }
+
+    public void Opcoes()
+    {
+        Debug.Log("Abrir opções...");
+        // ou ativar um painel de opções
     }
 
     public void Sair()
     {
         Application.Quit();
-        Debug.Log("Sair do jogo"); // só funciona no build final
+        Debug.Log("Saiu do jogo."); // só funciona no build
     }
 }
