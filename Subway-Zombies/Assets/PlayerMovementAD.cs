@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovementAD : MonoBehaviour
 {
     public float moveSpeed = 5f;  // Velocidade de movimentação do jogador
     public float boundaryX = 2f;  // Distância da barreira no eixo X
@@ -11,16 +11,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        // Atualiza se pode mover com base na posição
+        // Atualiza se pode mover com base na posição atual
         canMoveLeft = transform.position.x > -boundaryX;
         canMoveRight = transform.position.x < boundaryX;
 
-        // Input com setas
         float move = 0f;
 
-        if (Input.GetKey(KeyCode.LeftArrow) && canMoveLeft)
+        // Controlos com A e D
+        if (Input.GetKey(KeyCode.A) && canMoveLeft)
             move = -1f;
-        else if (Input.GetKey(KeyCode.RightArrow) && canMoveRight)
+        else if (Input.GetKey(KeyCode.D) && canMoveRight)
             move = 1f;
 
         // Aplica o movimento
