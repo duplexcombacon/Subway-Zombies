@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Obstacle
   - Obstaculo
+  - Tiro
+  - Zombie
   layers:
   - Default
   - TransparentFX
